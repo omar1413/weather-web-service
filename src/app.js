@@ -14,6 +14,8 @@ const publicDirPath = path.join(__dirname, '../public')
 const viewDirPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partialviews')
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'hbs')
 app.set('views',viewDirPath)
 hbs.registerPartials(partialsPath)
@@ -82,6 +84,6 @@ function getWeatherData(address, callback){
 }
 
 
-app.listen(3000,()=>{
-    console.log('server started on port 3000')
+app.listen(port,()=>{
+    console.log('server started on port ' + port)
 })
